@@ -1,0 +1,10 @@
+path: /root/autodl-tmp/Code_files/2025.2.4_YOLOv11-seg/data/train_data/centrosome/yolo
+
+train: images/train
+val: images/test
+test: images/test
+
+nc: 1
+
+names:
+  0: centrosome

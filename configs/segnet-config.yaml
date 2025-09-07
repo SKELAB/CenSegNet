@@ -1,0 +1,9 @@
+inch: 3
+outch: 1
+batchNorm_momentum: 0.1
+
+encoder_filters: [64, 128, 256, 512]
+decoder_filters: [256, 128, 64, 1]
+
+kernel_sizes: [3, 3, 3, 3]
+padding: [1, 1, 1, 1]

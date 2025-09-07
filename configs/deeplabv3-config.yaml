@@ -1,0 +1,5 @@
+model:
+  name: DeepLabv3_plus
+  nInputChannels: 3          # RGB 3
+  n_classes: 1               # 
+  os: 16                     # output stride 8 or 16

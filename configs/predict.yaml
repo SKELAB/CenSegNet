@@ -1,0 +1,32 @@
+img_pre_process:
+  patch_size: 250
+  overlap: 0.2
+  padding: 3
+img_post_process:
+  overlap_threshold: 0.5
+unet_params:
+  unet_model_threshold: 0.05
+  unet_pad_size: 20
+  unet_img_size: 128
+yolo_args:
+  conf: 0.02
+  iou: 0.2
+  imgsz: 640
+  half: false
+  device: null
+  max_det: 300
+  vid_stride: 1
+  stream_buffer: false
+  visualize: false
+  augment: false
+  agnostic_nms: false
+  classes: null
+  retina_masks: false
+  save: false
+  save_txt: false
+  save_crop: false
+  show_labels: false
+  show_conf: false
+  show_boxes: true
+  line_width: null
+  verbose: false

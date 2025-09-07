@@ -1,0 +1,13 @@
+
+path: D:/2.file/Code/Code_files/2025.2.4_YOLOv11-seg/data/train_data/Epithelial/yolo
+# D:/2.file/Code/Code_files/2025.2.4_YOLOv11-seg/config
+# /root/autodl-tmp/2025.2.4_YOLOv11-seg/data/train_data/Epithelial/yolo
+
+train: images/test
+val: images/test
+test: images/test
+
+nc: 1
+
+names:
+  0: Epithelial    #

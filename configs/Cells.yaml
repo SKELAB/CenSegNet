@@ -1,0 +1,11 @@
+path: /root/autodl-tmp/Code_files/2025.2.4_YOLOv11-seg/data/train_data/Cells/yolo
+
+train: /root/autodl-tmp/Code_files/2025.2.4_YOLOv11-seg/data/train_data/Cells/yolo/images/train
+val:   /root/autodl-tmp/Code_files/2025.2.4_YOLOv11-seg/data/train_data/Cells/yolo/images/test
+test:  /root/autodl-tmp/Code_files/2025.2.4_YOLOv11-seg/data/train_data/Cells/yolo/images/test
+
+
+nc: 1
+
+names:
+  0: centrosome

@@ -1,0 +1,24 @@
+# UNet Model Configuration
+model_name: "UNet"
+input_channels: 3  # Number of input channels (e.g., 3 for RGB images)
+output_classes: 1  # Number of output classes
+bilinear: false   # Use bilinear upsampling instead of transposed convolution
+
+# Feature dimensions for each level
+features:
+  - 64    # First level features
+  - 128   # Second level features
+  - 256   # Third level features
+  - 512   # Fourth level features
+  - 1024  # Bottom level features
+
+# Advanced options
+use_checkpointing: false  # Enable gradient checkpointing for memory efficiency
+
+# Optional configurations (for future extensions)
+advanced_options:
+  dropout_rate: 0.0
+  activation: "relu"
+  normalization: "batch"
+  kernel_size: 3
+  padding: 1

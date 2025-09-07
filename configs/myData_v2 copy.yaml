@@ -1,0 +1,11 @@
+
+path: /scratch/kf1d20/2024.12.16_yolo/data_v2/yolo_v2/
+
+train: /scratch/kf1d20/2024.12.16_yolo/data_v2/yolo_v2/images/train
+val: /scratch/kf1d20/2024.12.16_yolo/data_v2/yolo_v2/images/train
+test: /scratch/kf1d20/2024.12.16_yolo/data_v2/yolo_v2/images/test
+
+nc: 1
+
+names:
+  0: centrosome
