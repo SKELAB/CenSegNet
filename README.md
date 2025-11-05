@@ -14,8 +14,7 @@
   * **CLI** for terminal/batch use.
 
 * **Pre-trained model weights:** [Download here](https://drive.google.com/file/d/1UK7EaV5llvtQHAJKET__uJ0FO30vwjE0/view?usp=sharing).
-* **Example unseen images** [for direct testing](utils/exampleTiFImages). These samples were held out from both training and validation.
-* **Validated on Linux and Windows**.
+* **Example unseen images** [for direct testing](utils/exampleTiFImages). These samples **were held out** from both training and validation and are **intentionally cropped** to a smaller resolution to meet GitHub’s single-file size limit.
 
 ### :computer: GUI
 
