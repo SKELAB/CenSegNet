@@ -34,7 +34,7 @@ The pre-trained weight (IF_IHC_Epithe_All_Models_Weights_Combined.pt) can be dow
 
 Our method relies on detections from YOLO, the required **yolov11m-seg.pt** model will be automatically downloaded when running the code.
 
-**Detect Centrosomes for IF Image**
+**Detect/segment Centrosomes for IF Image**
 
 <pre><code>
 python CenSegNet.py --mode IF \ 
@@ -43,7 +43,7 @@ python CenSegNet.py --mode IF \
 		--outdir ./PathToSavePredictions/
 </code></pre>
 
-**Detect Centrosomes for IHC Image**
+**Detect/segment Centrosomes for IHC Image**
 
 <pre><code>
 python CenSegNet.py --mode IHC \
@@ -52,7 +52,7 @@ python CenSegNet.py --mode IHC \
 		--outdir ./PathToSavePredictions/
 </code></pre>
 
-**Detect Epithelial Regions for IHC Image**
+**Detect/segment Epithelial Regions for IHC Image**
 
 <pre><code>
 python CenSegNet.py --mode Epithelial \
