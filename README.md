@@ -6,29 +6,40 @@
 <br>
 </div>
 
-**CenSegNet enables the first large-scale, spatially resolved quantification of numerical and structural Centrosome Amplification at single-cell resolution**
+**CenSegNet enables the first large-scale, spatially resolved quantification of numerical and structural Centrosome Amplification at single-cell resolution.**
 
-We provide both a user-friendly Graphical User Interface (GUI) for ease of use, as well as a few command-lines for terminal-based operation. Detailed instructions for both methods are provided below.
+* **Two ways to run the tool (Detailed instructions for both are provided below.):**
+
+  * **GUI** for a quick, point-and-click workflow.
+  * **CLI** for terminal/batch use.
+
+* **Pre-trained model weights:** [Download here](https://drive.google.com/file/d/1UK7EaV5llvtQHAJKET__uJ0FO30vwjE0/view?usp=sharing).
+* **Example unseen images** [for direct testing](utils/exampleTiFImages). These samples were held out from both training and validation.
+* **Validated on Linux and Windows**.
 
 ### :computer: GUI
-
-[Our pre-trained weight](https://drive.google.com/file/d/1UK7EaV5llvtQHAJKET__uJ0FO30vwjE0/view?usp=sharing)  is available for download.
 
 <pre><code>
 python CenSegNet_GUI.py
 </code></pre>
 
-:mag_right: **Instructions**
+:mag_right: **Demo Usage of the GUI (Gif animation)**
 
 <img src="utils/GUI_GIF.gif" width="1000">
 
 ### :clipboard: Command
 
+We provide a few [example images](utils/exampleTiFImages) for direct testing of our GUI and source code.
+
+The pre-trained weight (IF_IHC_Epithe_All_Models_Weights_Combined.pt) can be downloaded [here](https://drive.google.com/file/d/1UK7EaV5llvtQHAJKET__uJ0FO30vwjE0/view?usp=sharing).
+
+Our method relies on detections from YOLO, the required **yolov11m-seg.pt** model will be automatically downloaded when running the code.
+
 **Detect Centrosomes for IF Image**
 
 <pre><code>
 python CenSegNet.py --mode IF \ 
-		--image ./PathTo/IF.tif \
+		--image ./PathTo/ExampleTiFImage/IF_Centrosome.tif \
 		--checkpoint ./PathTo/IF_IHC_Epithe_All_Models_Weights_Combined.pt \
 		--outdir ./PathToSavePredictions/
 </code></pre>
@@ -37,7 +48,7 @@ python CenSegNet.py --mode IF \
 
 <pre><code>
 python CenSegNet.py --mode IHC \
-		--image ./PathTo/IHC.tif \
+		--image ./PathTo/ExampleTiFImage/IHC_Centrosome.tif \
 		--checkpoint ./PathTo/IF_IHC_Epithe_All_Models_Weights_Combined.pt \
 		--outdir ./PathToSavePredictions/
 </code></pre>
@@ -46,28 +57,57 @@ python CenSegNet.py --mode IHC \
 
 <pre><code>
 python CenSegNet.py --mode Epithelial \
-		--image ./PathTo/IHC.tif \
+		--image ./PathTo/ExampleTiFImage/IHC_Epithelial.tif \
 		--checkpoint ./PathTo/IF_IHC_Epithe_All_Models_Weights_Combined.pt \
 		--outdir ./PathToSavePredictions/
 </code></pre>
 
-### :hammer: Dependency
+### :hammer: Installation & Dependency
 
-Our method relies on detections from YOLO. We recommend installing the Ultralytics package to ensure compatibility. Additionally, the required **yolov11m-seg.pt** model will be automatically downloaded when running the code.
+**Typically completes in a few minutes (depends on network speed and hardware).**
 
+If you’re on an HPC cluster with modules:
 
-~~~sh
-pip install opencv_python
-pip install tifffile
-pip install PyQt5
-pip install ultralytics
-pip install Pillow
-pip install skimage
-pip install PyYAML
-pip install Requests
-pip install scikit_learn
-~~~
+```bash
+module load Python/3.10.4-GCCcore-11.3.0
+```
 
+Create and activate a virtual environment:
+
+```bash
+python -m venv censeg
+source censeg/bin/activate
+python -m pip install --upgrade pip
+```
+
+Install dependencies:
+
+```bash
+python -m pip install sahi pandas tifffile ultralytics PyQt5 scikit-image scikit-learn
+```
+
+(Optional) Using a `requirements.txt`:
+
+```text
+sahi
+pandas
+tifffile
+ultralytics
+PyQt5
+scikit-image
+scikit-learn
+```
+
+```bash
+python -m pip install -r requirements.txt
+```
+**These dependencies are intentionally minimal; installing them will automatically pull in most commonly used libraries (e.g., torch, numpy) as transitive dependencies.**
+
+* **Reproducibility:** Two pinned requirement sets are provided, [requirements-gpu.txt](utils/requirements/requirements-gpu.txt) and [requirements-cpu.txt](utils/requirements/requirements-cpu.txt), matching configurations where we have successfully tested the software.
+
+* **Validated environments:**
+  * **GPU (Linux):** Intel® Xeon® Gold 6226R @ 2.90 GHz, NVIDIA A100 40 GB, 128 GB RAM.
+  * **CPU (Windows laptop):** 11th Gen Intel® Core™ i5-1145G7 @ 2.60 GHz, 16 GB RAM.
 
 ### :sunny: Detection/Segmentation Examples from Unseen Images
 
